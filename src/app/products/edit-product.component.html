@@ -1,0 +1,54 @@
+<div class="panel panel-primary" *ngIf='product'>
+  <div class="panel-heading">
+    Edit product
+  </div>
+  <label></label>
+    <div class="panel-body">
+        <form #myForm="ngForm" (ngSubmit)="saveProduct(myForm.value)"  class="form-horizontal">        
+        <table class="table" >
+            <tr >
+                <td class="col-md-3">Product Name  </td>
+                <td class="col-md-7"><input type="text" name='productName' [(ngModel)]="product.productName" class="form-control"   required ></td>
+                <!-- <td *ngIf='errors.productName' class="text-danger" >{{errors.productName}}</td>             -->
+              </tr>
+           <tr>
+            <td>Product Code:</td>
+            <td><input type="text" name='productCode' class="form-control" [(ngModel)]="product.productCode" required></td>
+            <!-- <td *ngIf='errors.productCode' class="text-danger">{{errors.productCode}}</td>     -->
+          </tr>
+          <tr>
+              <td>Release Date:</td>
+              <td><input type="date" name='releaseDate' class="form-control" [(ngModel)]="product.releaseDate" required></td>
+              <!-- <td *ngIf='errors.releaseDate' class="text-danger">{{errors.releaseDate}}</td>     -->
+          </tr>
+          <tr>
+              <td>Description:</td>
+              <td><input type="text" name='description' class="form-control" [(ngModel)]="product.description" required></td>
+              <!-- <td *ngIf='errors.description' class="text-danger">{{errors.description}}</td>     -->
+          </tr>
+          <tr>
+              <td>Price:</td>
+              <td><input type="number" name='price' class="form-control" [(ngModel)]="product.price" required></td>
+              <!-- <td *ngIf='errors.price' class="text-danger">{{errors.price}}</td>     -->
+          </tr>
+          <tr>
+              <td>Ratings:</td>
+              <td><input type="number" name='starRating' class="form-control" [(ngModel)]="product.starRating"  required></td>
+              <!-- <td *ngIf='errors.starRating' class="text-danger">{{errors.starRating}}</td>     -->
+          </tr>
+          <tr>
+              <td>Image Url:</td>
+              <td><input type="text" name='imageUrl' class="form-control" [(ngModel)]="product.imageUrl" required></td>
+              <!-- <td *ngIf='errors.imageUrl' class="text-danger">{{errors.imageUrl}}</td>     -->
+          </tr>            
+          <tr>
+            <td>
+                <input type="submit" text="Save Changes" class="btn btn-primary">
+            </td>
+            <td></td> 
+            
+          </tr> 
+        </table>
+        </form>
+      </div>
+</div>
